@@ -46,9 +46,9 @@ def start_client(frame_size):
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     server_address = ('localhost', 12345)
 
-    for i in range(5):  # Sending 5 frames as an example
-        # Create a frame based on user input
-        frame = f"Frame {i + 1}: " + 'X' * (frame_size - len(f"Frame {i + 1}: "))  # Fill the frame
+    for i in range(5):  
+       
+        frame = f"Frame {i + 1}: " + 'X' * (frame_size - len(f"Frame {i + 1}: ")) 
         print(f"Client sending: {frame}")
 
         # Send the frame to the server
@@ -59,7 +59,7 @@ def start_client(frame_size):
         print(f"Client received: {ack.decode()}")
 
         # Simulate Stop and Wait behavior
-        time.sleep(1)  # Optional: Wait a moment before sending the next frame
+        time.sleep(1)  
 
     client_socket.close()
 
